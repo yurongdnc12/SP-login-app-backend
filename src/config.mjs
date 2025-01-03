@@ -8,44 +8,44 @@ export default {
   SCOPES: process.env.SCOPES || 'openid uinfin name',
 };
 
-KEYS: {
+export const KEYS = {
   PRIVATE_SIG_KEY: {
-    alg: 'ES256';
-    kty: 'EC';
-    x: 'gosQcx5KfTD4m6FC-zjnKK0EnAzXYU_ZCKzAoe7Fk_U';
-    y: 'Dv-htpYQR-EOs8qM3Z0dulwYNnO0IsNI48fHggrEZIs';
-    crv: 'P-256';
-    d: '_h_uTjVw_mQlH1DK37U8mZWg6MLuFLZH74tqWFyzvr8';
-    kid: 'my-sig-key';
-  }
+    alg: 'ES256',
+    kty: 'EC',
+    x: 'gosQcx5KfTD4m6FC-zjnKK0EnAzXYU_ZCKzAoe7Fk_U',
+    y: 'Dv-htpYQR-EOs8qM3Z0dulwYNnO0IsNI48fHggrEZIs',
+    crv: 'P-256',
+    d: '_h_uTjVw_mQlH1DK37U8mZWg6MLuFLZH74tqWFyzvr8',
+    kid: 'my-sig-key',
+  },
   PRIVATE_ENC_KEY: {
-    alg: 'ECDH-ES+A256KW';
-    kty: 'EC';
-    x: '2JX0k43IMVnL-y9sCNSBBHW9KYhTzLc3umHiqxAqWZU';
-    y: 'PUT YOUR Y VALUE HERE';
-    crv: 'P-256';
-    d: 'dJv1wdINlUBVIlsA2UJFPhgXzee7l2T2OtfYWUTJNUY';
-    kid: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs';
-  }
+    alg: 'ECDH-ES+A256KW',
+    kty: 'EC',
+    x: '2JX0k43IMVnL-y9sCNSBBHW9KYhTzLc3umHiqxAqWZU',
+    y: 'PUT YOUR Y VALUE HERE',
+    crv: 'P-256',
+    d: 'dJv1wdINlUBVIlsA2UJFPhgXzee7l2T2OtfYWUTJNUY',
+    kid: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs',
+  },
   PUBLIC_SIG_KEY: {
-    alg: 'ES256';
-    kty: 'EC';
-    x: 'gosQcx5KfTD4m6FC-zjnKK0EnAzXYU_ZCKzAoe7Fk_U';
-    y: 'Dv-htpYQR-EOs8qM3Z0dulwYNnO0IsNI48fHggrEZIs';
-    crv: 'P-256';
-    use: 'sig';
-    kid: 'my-sig-key';
-  }
+    alg: 'ES256',
+    kty: 'EC',
+    x: 'gosQcx5KfTD4m6FC-zjnKK0EnAzXYU_ZCKzAoe7Fk_U',
+    y: 'Dv-htpYQR-EOs8qM3Z0dulwYNnO0IsNI48fHggrEZIs',
+    crv: 'P-256',
+    use: 'sig',
+    kid: 'my-sig-key',
+  },
   PUBLIC_ENC_KEY: {
-    alg: 'ECDH-ES+A256KW';
-    kty: 'EC';
-    x: '2JX0k43IMVnL-y9sCNSBBHW9KYhTzLc3umHiqxAqWZU';
-    y: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs';
-    crv: 'P-256';
-    use: 'enc';
-    kid: 'my-enc-key';
-  }
-}
+    alg: 'ECDH-ES+A256KW',
+    kty: 'EC',
+    x: '2JX0k43IMVnL-y9sCNSBBHW9KYhTzLc3umHiqxAqWZU',
+    y: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs',
+    crv: 'P-256',
+    use: 'enc',
+    kid: 'my-enc-key',
+  },
+};
 
 function validateConfig() {
   if (!process.env.CLIENT_ID) throw new Error('CLIENT_ID is missing');
