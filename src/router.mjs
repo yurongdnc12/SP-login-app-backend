@@ -32,7 +32,7 @@ custom.setHttpOptionsDefaults({
 const router = new Router();
 
 router.get('/.well-known/jwks.json', function getJwks(ctx) {
-  ctx.body = { keys: [config.KEYS.PUBLIC_SIG_KEY, config.KEYS.PUBLIC_ENC_KEY] };
+  ctx.body = { keys: [config.PUBLIC_SIG_KEY, config.PUBLIC_ENC_KEY] };
 });
 
 router.get('/login', async function handleLogin(ctx) {
@@ -60,7 +60,7 @@ router.get('/callback', async function handleSingpassCallback(ctx) {
     console.error('receivedQueryParams', receivedQueryParams);
     const { code_verifier, nonce, state } = ctx.session.auth; // Could possibly be hardcoded.
     console.error('ctx.session.auth', ctx.session.auth);
-    console.error('config.KEYS.PRIVATE_ENC_KEY', config.KEYS.PRIVATE_ENC_KEY);
+    console.error('config.PRIVATE_ENC_KEY', config.PRIVATE_ENC_KEY);
     // Token request
     const tokenSet = await singpassClient.callback(config.REDIRECT_URI, receivedQueryParams, {
       code_verifier,
@@ -75,7 +75,7 @@ router.get('/callback', async function handleSingpassCallback(ctx) {
     // Userinfo request (available only to apps with additional allowed scopes, beyond just 'openid').
     // const userInfo = await singpassClient.userinfo(tokenSet); // -- OG
     const userInfo = await singpassClient.userinfo(tokenSet.access_token, {
-      key: config.KEYS.PRIVATE_ENC_KEY, // Decrypt using the private encryption key
+      key: config.PRIVATE_ENC_KEY, // Decrypt using the private encryption key
     });
 
     console.error('This is the user info returned:');
