@@ -82,7 +82,7 @@ router.get('/callback', async function handleSingpassCallback(ctx) {
     console.error(userInfo);
 
     ctx.session.user = { ...tokenSet.claims(), ...userInfo };
-    ctx.redirect(process.env.FRONTEND_URL || 'https://yr-learningmonth24.netlify.app/');
+    ctx.redirect(process.env.FRONTEND_URL || 'https://yr-learningmonth24.netlify.app');
   } catch (err) {
     console.error('[ACTUAL ERROR]', err);
     ctx.status = 401;
