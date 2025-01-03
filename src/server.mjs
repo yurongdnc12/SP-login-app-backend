@@ -1,5 +1,5 @@
 import { router } from './router.mjs';
-import config from './server.mjs';
+import config from './config.mjs';
 import Koa from 'koa';
 import logger from 'koa-logger';
 import session from 'koa-session';
