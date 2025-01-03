@@ -20,10 +20,10 @@ export default {
     alg: 'ECDH-ES+A256KW',
     kty: 'EC',
     x: '2JX0k43IMVnL-y9sCNSBBHW9KYhTzLc3umHiqxAqWZU',
-    y: 'PUT YOUR Y VALUE HERE',
+    y: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs',
     crv: 'P-256',
     d: 'dJv1wdINlUBVIlsA2UJFPhgXzee7l2T2OtfYWUTJNUY',
-    kid: 'o_loKmRXP3-kTJCMHxv6Cnj1ahNEJwMQvOWwBURt6Cs',
+    kid: 'my-enc-key',
   },
   PUBLIC_SIG_KEY: {
     alg: 'ES256',
